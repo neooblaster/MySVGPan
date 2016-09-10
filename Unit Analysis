@@ -1,0 +1,97 @@
+		// WheelDelta : Down : -x && Up : x
+		// ZoomIn  : x1.1
+		// zoomOut : x0.9
+		
+		/**
+		
+		
+			
+			SVG.height = in
+			SVG.width = in
+			SVG.viewBox = fullscreen = ref = scale "1"
+			
+			SVG = vB mais côté HTML
+			
+			quelque soit SVG width & height, viewBox origine = fullscreen (viewBox sur le document)
+			
+			vB0 = start view x
+			vB1 = start view y
+			vB2 = width view
+			vB3 = height view
+			
+			zoomer = réduire la vue donc vB2 et vB3
+			
+			mais vB0 et vB1 reste à scale 1 tout le temps
+			
+			il y à trois cadre
+			
+				SVG avec overflow et dimension PX
+				document src avec vB0 et vB1 à scale 1
+				viewBox qui plus c près plus les val sont petite
+				
+			
+			> créer attr :
+				scale : 1 état init
+				document = vB2 vB3 état init
+				
+				
+			> Zoom centré :
+				Position sur SVG
+				
+				Calculer coord pixel document
+				
+				opérer zoom
+				
+				adapter vb0 et vb1 pour qu'il soit centré
+				
+				
+			
+			> Paramètres :
+				Position X curseur dans écran (Px)
+				Position Y curseur dans écran (Px)
+				Position X curseur dans document (Px)
+				Position Y Curseur dans document (Px)
+				Position X SVG relative (Px)
+				Position Y SVG relative (Px)
+				Position X SVG Absolute (Px)
+				Position Y SVG Absolute (Px)
+				Largeur SVG (Px), 
+				Hauteur SVG (Px), 
+				Position X Curseur SVG (Px)
+				Position Y Curseur SVG (Px)
+				Position X Curseur SVG (%)
+				Position Y Curseur SVG (%)
+				Echelle (U), 
+				Position X Document (%), 
+				Position Y Document (%), 
+				Largeur Document (U), 
+				Hauteur Document (U), 
+				Largeur Vue (%U), 
+				Hauteur Vue (%U), 
+				Zoom (Int / Out), 
+				
+			
+			> Diviser la vb par 2 = agrandis x2
+			
+			appliquer zoom sur scale et utiliser scale pour vb
+			
+			determiner % posx et poxy dans SVG
+			determiné part vb sur document
+			calculer
+			
+			a l'aide de %posx et %poxy, 
+			
+			
+			[vu] determiner %pox et %poy SVG
+			%wVB et %hVB de document
+			imputer %pox et %poy à %wVB et %hVB
+			appliquer %xVB et %yVB à l'imputation >>> %xPixel et %hPixel
+			Appliquer scale sur VB
+			avec new VB size en %, %xVB = %xPixel - %wVB / 2 idem pour y
+			
+			Compatibilité :
+				quelque soit la réso écran user,
+				quelque soit la taille du document
+				proportions tjs bonne
+		
+		**/
